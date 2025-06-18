@@ -13,13 +13,11 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: Kai S. Wong
+title: Kai Wong
 email: kaiwong_at_princeton.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
-twitter_username: username
+  Kai Sayamontry Wong (Kai S. Wong)'s personal wesbite. Here he displays the projects he is working on, and pictures from his life.'
+twitter_username: none_of_your_business
 github_username: kais-wong
 minimal_mistakes_skin: default
 search: true
@@ -59,22 +57,25 @@ plugins:
 
 author:
   name   : "Kai S. Wong"
-  avatar : "/assets/images/bio-photo.jpg"
+  avatar : "/assets/images/kyoto_coin.jpg"
   bio    : |
     "I'm an undergraduate student at Princeton University interested in mathematical modeling, and Japanese language and culture."
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://"
+    # - label: "Website"
+    #   icon: "fas fa-fw fa-link"
+    #   url: "https://"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://linkedin.com/in/kaiswong"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/kais-wong"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+    # - label: "Instagram"
+    #   icon: "fab fa-fw fa-instagram"
+    #   url: "https://instagram.com/"
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/@kaisw03"
 
 footer:
   links:
@@ -84,9 +85,12 @@ footer:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/kais-wong"
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      url: "https://instagram.com/"
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/@kaisw03"
+    # - label: "Instagram"
+    #   icon: "fab fa-fw fa-instagram"
+    #   url: "https://instagram.com/"
 
 defaults:
   # _posts
