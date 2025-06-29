@@ -36,6 +36,6 @@ I have traveled to Japan, Malaysia, Hong Kong, Mainland China, and South Korea. 
 
 <figure style="margin-top: -2em; margin-bottom: 0.2em;">
   <img src="/assets/images/shimizu.jpg" alt="Shimizu Black Beach" width="300" />
-  <figcaption style="margin-top: -1em;font-size:0.8em; color:#666;">清水の黒の海岸 | A black beach in Shimizu, Japan.</figcaption>
+  <figcaption style="margin-top: -1em;font-size:0.8em; color:#666;">清水の黒の海岸 | A black beach in Shimizu, Japan. </figcaption>
 </figure>
 

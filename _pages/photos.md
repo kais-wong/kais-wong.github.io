@@ -10,6 +10,11 @@ header:
   image_description: "Far Away"
   caption: "Photo by Suika"
 
+toc: true
+toc_label: "Table of Contents"
+toc_icon: "cog"
+toc_sticky: false
+
 japan:
   - url: /assets/images/chigasaki.jpg
     image_path: /assets/images/chigasaki.jpg
