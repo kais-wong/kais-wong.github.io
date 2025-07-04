@@ -2,18 +2,29 @@
 title: "2D Heat Equation"
 date: 2025-06-10T15:34:30-04:00
 categories:
-  - projects
+  - Projects
+header:
+  image: 
+  teaser: /assets/images/2D_heat_diffusion2.gif
 tags:
   - Diffusion Equation
   - Python
+layout: single
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "cog"
+toc_sticky: true
 ---
 
-<script
-  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"
-  type="text/javascript">
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
+<script type="text/javascript" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 
 # Background
@@ -38,12 +49,31 @@ Where $\kappa$ is the diffusivity constant.
 
 To solve this partial differential equation, we will discritize it in space using the central finite differences approach. By doing so we can rewrite our PDE as a system of coupled ODEs.
 
-$$\frac{dT_{i,j}}{dt}=\kappa(\frac{T_{i-1,j}(t) - 2T_{i,j}(t) + T_{i+1,j}(t)}{(\Delta x)^2} + \frac{T_{i,j-1}(t) - 2T_{i,j}(t) + T_{i,j+1}(t)}{(\Delta y)^2})$$
+<!-- $$\frac{dT_{i,j}}{dt}=\kappa(\frac{T_{i-1,j}(t) - 2T_{i,j}(t) + T_{i+1,j}(t)}{(\Delta x)^2} + \frac{T_{i,j-1}(t) - 2T_{i,j}(t) + T_{i,j+1}(t)}{(\Delta y)^2})$$ -->
+
+$$
+\begin{align}
+\frac{dT_{i,j}}{dt} =\ & \kappa \Bigg(
+    \frac{T_{i-1,j}(t) - 2T_{i,j}(t) + T_{i+1,j}(t)}{(\Delta x)^2} \\
+    &+ \frac{T_{i,j-1}(t) - 2T_{i,j}(t) + T_{i,j+1}(t)}{(\Delta y)^2}
+\Bigg)
+\end{align}
+$$
 
 ## Forward Euler
 
 We can now apply standard numerical methods to approximate the solution to this system of ODEs. Apply the forward euler method where we can approximate the next point in time $f^{n+1}$ using information about the current point $f^{n}$ and its derivative $\frac{df^{n}}{dt}$.
-$$T^{n+1}_{i,j}=T^{n}_{i,j} + \Delta t \kappa (\frac{T_{i-1,j}(t) - 2T_{i,j}(t) + T_{i+1,j}(t)}{(\Delta x)^2} + \frac{T_{i,j-1}(t) - 2T_{i,j}(t) + T_{i,j+1}(t)}{(\Delta y)^2})$$
+
+<!-- $$T^{n+1}_{i,j}=T^{n}_{i,j} + \Delta t \kappa (\frac{T_{i-1,j}(t) - 2T_{i,j}(t) + T_{i+1,j}(t)}{(\Delta x)^2} + \frac{T_{i,j-1}(t) - 2T_{i,j}(t) + T_{i,j+1}(t)}{(\Delta y)^2})$$ -->
+
+$$
+\begin{align*}
+T^{n+1}_{i,j} =\ & T^{n}_{i,j} + \Delta t\, \kappa \Bigg(
+    \frac{T_{i-1,j}(t) - 2T_{i,j}(t) + T_{i+1,j}(t)}{(\Delta x)^2} \\
+    &+ \frac{T_{i,j-1}(t) - 2T_{i,j}(t) + T_{i,j+1}(t)}{(\Delta y)^2}
+\Bigg)
+\end{align*}
+$$
 
 <!-- For simplicity, assume that $\Delta x = \Delta y$.
 
@@ -53,7 +83,7 @@ We have now discitized the PDE in space and time. In essence, this represents th
 
 ## Code
 
-Python allows us to express this operation simply using splicing. Let the term $\Delta t \kappa$ be alpha. Also, in order to simulate the temperature over time, will iterate this operation from $t_{inital}$ to $t_{final}$
+Python allows us to express this operation simply using splicing. Let the term $\Delta t \kappa$ be alpha. Also, in order to simulate the temperature over time, we will iterate this operation from $t_{inital}$ to $t_{final}$
 
 ```python
 def forward_Euler2D(T, dt, time, k, dx, dy, T_0, T_N, save_interval):

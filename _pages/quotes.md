@@ -9,7 +9,7 @@ Some quotes I like.
 
 Cost of your victory
 > "When your sun rises, another's sun sets."  
-> <span style="font-size:0.95em; color:#888;">— Kai Wong. (I independently came up with this on a stroll in Seoul, but I'm sure someone else has said it before) </span>
+> <span style="font-size:0.95em; color:#888;">— Kai Wong (I independently came up with this on a stroll in Seoul, but I'm sure someone else has said it before) </span>
 
 Predicting stock prices
 > "I can calculate the motion of heavenly bodies, but not the madness of men."  
