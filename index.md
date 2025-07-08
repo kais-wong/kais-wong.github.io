@@ -27,7 +27,7 @@ feature_row:
     alt: "Project 2"
     title: "2D Heat Diffusion"
     excerpt: "Model of heat w.r.t. time in 2D"
-    url: "/project-2/"
+    url: "/projects/2D-Heat-Equation/"
   - image_path: /assets/images/seir_epidemic_progression_forward_euler.gif
     alt: "Project 3"
     title: "SIR Model"

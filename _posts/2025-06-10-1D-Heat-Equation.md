@@ -9,8 +9,16 @@ tags:
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "cog"
+toc_sticky: True
 ---
 
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']]
+  }
+};
+</script>
 <script type="text/javascript" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
@@ -27,7 +35,7 @@ $$
 
 However, since we wil only consider the heat equation in 1D we have the following:
 
-$$\frac{\delta T}{\delta t} = \kappa \dfrac{\delta T^2}{\delta x^2}$$
+$$\frac{\delta T}{\delta t} = \kappa \dfrac{\delta^2 T}{\delta x^2}$$
 
 Where $\kappa$ is the diffusivity constant.
 
@@ -75,7 +83,7 @@ T_{N-1}(t)
 \end{bmatrix}
 $$
 
-The matrix A is actually the discrete representation of the $\frac{d^2}{dx^2}$. Addionally, due to the nature of this problem, we must add the Dirichlet boundary conditions using a term we will call $\vec{b}$
+The matrix A is actually the discrete representation of the $\frac{d^2}{dx^2}$. Addionally, due to the nature of this problem, we must add the Dirichlet boundary conditions using a term we will call $\vec{b}$.
 
 $$
 \vec{b} = [T_0,\ 0,\ 0,\ \ldots,\ 0,\ T_N]^T
@@ -87,45 +95,126 @@ $$
 \frac{d\mathbf{T}(t)}{dt} = \frac{\kappa}{(\Delta x)^2} A\, \mathbf{T}(t) + \vec{b}
 $$
 
+Now, by utilizing linear algebra, we have both represented our ODEs in a more legible manner, and one that allows us to concurrently solve the differential equation at each spacial node together in one step. We can now apply standard numerical methods to approximate the solution to this system of ODEs. 
+
+I will apply three different numerical methods to solve the heat equation. Each method has its advantages and drawbacks, but method 3 is the most conventional.
+
 ## Method 1: Forward Euler (Explicit)
 
-Now, by utilizing linear algebra, we have both represented our ODEs in a more legible manner, and one that allows us to concurrently solve the differential equation at each spacial node together in one step. 
+Apply the forward euler method where we can approximate the next point in time $f^{n+1}$ using information about the current point $f^{n}$ and its derivative $\frac{df^{n}}{dt}$.
 
-We can now apply standard numerical methods to approximate the solution to this system of ODEs. Apply the forward euler method where we can approximate the next point in time $f^{n+1}$ using information about the current point $f^{n}$ and its derivative $\frac{df^{n}}{dt}$.
+$$
+\vec{T}^{\,n+1} = \vec{T}^{\,n} + \Delta t \left( A\, \vec{T}^n + \vec{b}^{\,n} \right)
+$$
 
-$$T^{n+1}_{i,j}=T^{n}_{i,j} + \Delta t \kappa (\frac{T_{i-1,j}(t) - 2T_{i,j}(t) + T_{i+1,j}(t)}{(\Delta x)^2})$$
+This simplifies to
 
-<!-- For simplicity, assume that $\Delta x = \Delta y$.
+$$
+\vec{T}^{\,n+1} = \left( I + \Delta t\, A \right) \vec{T}^{\,n} + \Delta t\, \vec{b}^{\,n}
+$$
 
-$$T^{n+1}_{i,j}=T^{n}_{i,j} + \frac{\Delta t \kappa}{(\Delta x)^2} (T_{i-1,j}(t) + T_{i+1,j}(t) + T_next = {i,j-1}(t) + T_{i,j+1}(t) - 4T_{i,j}(t))$$ -->
 
-We have now discitized the PDE in space and time. In essence, this represents the temperature of the discritized grid at a particular point in time. Now must now represent this in code.
+<!-- $$
+\mathbf{T}^{n+1} = \mathbf{T}^{n} + \Delta t \left( A\, \mathbf{T}^n + \mathbf{b}^n \right)
+$$ -->
 
-Python allows us to express this operation simply using splicing. Let the term $\Delta t \kappa$ be alpha. Also, in order to simulate the temperature over time, will iterate this operation from $t_{inital}$ to $t_{final}$
+We have now discretized the system of ODEs in time, allowing us to approximate a solution numerically.
+
+To simulate the temperature evolution, we iterate this update from $t_{\text{initial}}$ to $t_{\text{final}}$.
+
+Below is my implementation of the Forward Euler method for this system in Python:
 
 ```python
-def forward_Euler2D(T, dt, time, k, dx, dy, T_0, T_N, save_interval):
-    alpha = dt * k
-    steps = int((time + dt) /dt)
-    T_next = T.copy()
+def forward_Euler(T, dt, time, k, dx, T_0, T_N, save_interval):
+    """
+    Description: Use forward Euler's method to solve the heat equation
+    Input: T (array of temperatures of inside points), dt (time step), time, k, dx, T_0, T_N, save_interval
+    Output: Return a list containing the temperatures for all nodes at the specified save interval
+    """
     T_history = [T.copy()]
-    for step in range(steps):
-        T_next[1:-1, 1:-1] = T[1:-1, 1:-1] + alpha * (
-            (T[:-2, 1:-1] - 2 * T[1:-1, 1:-1] + T[2:, 1:-1]) / dx**2 +
-            (T[1:-1, :-2] - 2 * T[1:-1, 1:-1] + T[1:-1, 2:]) / dy**2
-        )
-        T, T_nexr = T_next, T
-        if step != 0 and step % (save_interval / dt) == 0:
+    alpha = k / dx**2
+    n = len(T)
+    M = sparse.eye(n) + dt * alpha * DiffusionMatrix(n)
+    b = np.zeros(n)
+    b[0] = T_0
+    b[-1] = T_N
+    b *= alpha
+    steps = int((time + dt) /dt)
+    for i in range(steps):
+        T = M @ T + dt * b
+        if i != 0 and (i * dt) % save_interval == 0:
             T_history.append(T.copy())
+
     return T_history
 ```
 
+Forward Euler is an explicit scheme meaning that in order to solve for the next point in time, only the infomration at the current point is used. While this is efficient, explicit schemes are susceptible to blowing up for a large $\Delta t$. Specifically, ____
+
 ## Method 2: Backward Euler (Implicit)
 
+```python
+def backward_Euler(T, dt, time, k, dx, T_0, T_N, save_interval):
+    """
+    Description: Use backward Euler's method to solve the heat equation
+    Input: T (array of temperatures of inside points), dt (time step), time, k, dx, T_0, T_N, save_interval
+    Output: Return a list containing the temperatures for all nodes at the specified save interval
+    """
+    # basically we want to solve Mx = c, where M = (I - dtA) and c = T + dtb,
+    # where A and b are the perviously defined terms
+
+    alpha = k/dx**2        # the coefficient to A and b
+    n = len(T)             # number of interior points
+    A = alpha * DiffusionMatrix(n)
+    b = np.zeros(n)
+    b[0] = T_0
+    b[-1] = T_N
+    b *= alpha
+
+    M = sparse.eye(n) - dt * A
+    T_history = [T.copy()]
+    steps = int((time + dt) /dt)
+
+    for i in range(steps):
+        b_eff = T + dt * b
+        T = sparse.linalg.spsolve(M, b_eff)
+        if i != 0 and (i * dt) % save_interval == 0:
+            T_history.append(T.copy())
+
+    return T_history
+```
+
 ## Method 3: Crank-Nicolson (Implicit & Standard)
+
+```python
+def Crank_Nicolson(T, dt, time, k, dx, T_0, T_N, save_interval):
+    """
+    Description: Use Crank-Nicolson method to solve the heat equation
+    Input: T (array of all temperatures), dt (time step), time, k, dx, T_0, T_N, save_interval
+    Output: Return a list containing the temperatures for all nodes at the specified save interval
+    """
+    T_history = [T.copy()]
+    alpha = k/dx**2
+    n = len(T)
+    M = sparse.eye(n) - dt/2 * alpha * DiffusionMatrix(n)
+    M2 = sparse.eye(n) + dt/2 * alpha * DiffusionMatrix(n)
+    A_eff = M.copy()
+    b = np.zeros(n)
+    b[0] = T_0
+    b[-1] = T_N
+    b *= alpha
+
+    steps = int((time + dt) /dt)
+    for i in range(steps):
+        b_eff = M2 @ T + dt/2 * (b + b)
+        T = sparse.linalg.spsolve(A_eff, b_eff)
+        if i != 0 and (i * dt) % save_interval == 0:
+            T_history.append(T.copy())
+
+    return T_history
+```
  
 Using the code above, we can model the temeprature of every interior point on our grid over time.
 
 There are various ways to represent this system, but I represented this model using a simple animation.
 
-{% include figure popup=true image_path="/assets/images/2D_heat_diffusion2.gif" alt="2d_heat" caption="Simple model of the diffusion of heat on a 2D surface" %}
+<!-- {% include figure popup=true image_path="/assets/images/2D_heat_diffusion2.gif" alt="2d_heat" caption="Simple model of the diffusion of heat on a 2D surface" %} -->

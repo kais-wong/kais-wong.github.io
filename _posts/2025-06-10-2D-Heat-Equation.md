@@ -39,7 +39,7 @@ $$
 
 However, since we wil only consider the heat equation in 2D we have the following:
 
-$$\dfrac{\delta T}{\delta t} = \kappa (\dfrac{\delta T^2}{\delta x^2} + \dfrac{\delta^2 T}{\delta y^2})$$
+$$\dfrac{\delta T}{\delta t} = \kappa (\dfrac{\delta^2 T}{\delta x^2} + \dfrac{\delta^2 T}{\delta y^2})$$
 
 Where $\kappa$ is the diffusivity constant.
 
