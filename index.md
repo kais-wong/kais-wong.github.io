@@ -28,7 +28,7 @@ feature_row:
     title: "2D Heat Diffusion"
     excerpt: "Model of heat w.r.t. time in 2D"
     url: "/projects/2D-Heat-Equation/"
-  - image_path: /assets/images/seir_epidemic_progression_forward_euler.gif
+  - image_path: /assets/images/sir/seir_epidemic_progression_forward_euler.gif
     alt: "Project 3"
     title: "SIR Model"
     excerpt: "Simple compartmental model for epidemiological motion"
