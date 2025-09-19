@@ -18,7 +18,7 @@ header:
   caption: "Tokyo Skyline"
 excerpt: "Mathematical Modeling, Scientific Computing, and More"
 feature_row:
-  - image_path: /assets/images/GBM.png
+  - image_path: /assets/images/gbm/GBM.png
     alt: "Project 1"
     title: "Geometric Brownian Motion"
     excerpt: "Simple model of asset price movement"
