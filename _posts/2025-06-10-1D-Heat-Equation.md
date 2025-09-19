@@ -221,4 +221,4 @@ Using the code above, we can model the temeprature of every interior point on ou
 
 There are various ways to represent this system, but I represented this model by graphing multiple heat distributions over time interval $[0, 200]$.
 
-{% include figure popup=true image_path="/assets/images/heat_1D_cn.png" alt="1d_cn" caption="Simple model of the diffusion of heat on a 2D surface" %}
+{% include figure popup=true image_path="/assets/images/heat_1D_cn.png" alt="1d_cn" caption="Success of Crank-Nicolson with r=0.8" %}

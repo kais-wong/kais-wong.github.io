@@ -111,15 +111,10 @@ There are various ways to represent this system, but I represented this model us
 {% include figure popup=true image_path="/assets/images/2D_heat_diffusion2.gif" alt="2d_heat" caption="Simple model of the diffusion of heat on a 2D surface" %}
 
 
-
 <!-- <figure style="margin-top: -2em; margin-bottom: 0.2em;">
   <img src="/assets/images/2D_heat_diffusion2.gif" alt="Shimizu Black Beach" width="300" />
   <figcaption style="margin-top: -1em;font-size:0.8em; color:#666;">清水の黒の海岸 | A black beach in Shimizu, Japan. </figcaption>
 </figure> -->
-
-
-### Heading
-### Heading
 
 <!-- You'll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
