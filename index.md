@@ -18,12 +18,12 @@ header:
   caption: "Tokyo Skyline"
 excerpt: "Mathematical Modeling, Scientific Computing, and More"
 feature_row:
-  - image_path: /assets/images/gbm/GBM.png
+  - image_path: /assets/images/gbm/closed_form.png
     alt: "Project 1"
     title: "Geometric Brownian Motion"
     excerpt: "Simple model of asset price movement"
     url: "/projects/GBM/"
-  - image_path: /assets/images/2D_heat_diffusion2.gif
+  - image_path: /assets/images/heat/2D_heat_diffusion2.gif
     alt: "Project 2"
     title: "2D Heat Diffusion"
     excerpt: "Model of heat w.r.t. time in 2D"

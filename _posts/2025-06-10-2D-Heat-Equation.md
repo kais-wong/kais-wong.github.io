@@ -5,7 +5,7 @@ categories:
   - projects
 header:
   image: 
-  teaser: /assets/images/2D_heat_diffusion2.gif
+  teaser: /assets/images/heat/2D_heat_diffusion2.gif
 tags:
   - Diffusion Equation
   - Python
@@ -108,7 +108,7 @@ Using the code above, we can model the temeprature of every interior point on ou
 
 There are various ways to represent this system, but I represented this model using a simple animation.
 
-{% include figure popup=true image_path="/assets/images/2D_heat_diffusion2.gif" alt="2d_heat" caption="Simple model of the diffusion of heat on a 2D surface" %}
+{% include figure popup=true image_path="/assets/images/heat/2D_heat_diffusion2.gif" alt="2d_heat" caption="Simple model of the diffusion of heat on a 2D surface" %}
 
 
 <!-- <figure style="margin-top: -2em; margin-bottom: 0.2em;">

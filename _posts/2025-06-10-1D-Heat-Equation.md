@@ -5,7 +5,7 @@ categories:
   - projects
 header:
   image: 
-  teaser: /assets/images/heat_1D_cn.png
+  teaser: /assets/images/heat/heat_1D_cn.png
 tags:
   - Diffusion Equation
   - Python
@@ -152,7 +152,7 @@ def forward_Euler(T, dt, time, k, dx, T_0, T_N, save_interval):
 
 Forward Euler is an explicit scheme meaning that in order to solve for the next point in time, only the infomration at the current point is used. While this is efficient, explicit schemes are susceptible to blowing up for a large $\Delta t$. Below is an example of Forward Euler blowing up with $r=0.8$, which can be compared with how the implicit methods, which maintain stability given the same parameters.
 
-{% include figure popup=true image_path="/assets/images/heat_1D_fe_blowup.png" alt="1d_fe" caption="Failure of Forward Euler scheme for 1D heat diffusion with r=0.8" %}
+{% include figure popup=true image_path="/assets/images/heat/heat_1D_fe_blowup.png" alt="1d_fe" caption="Failure of Forward Euler scheme for 1D heat diffusion with r=0.8" %}
 
 ## Method 2: Backward Euler (Implicit)
 
@@ -221,4 +221,4 @@ Using the code above, we can model the temeprature of every interior point on ou
 
 There are various ways to represent this system, but I represented this model by graphing multiple heat distributions over time interval $[0, 200]$.
 
-{% include figure popup=true image_path="/assets/images/heat_1D_cn.png" alt="1d_cn" caption="Success of Crank-Nicolson with r=0.8" %}
+{% include figure popup=true image_path="/assets/images/heat/heat_1D_cn.png" alt="1d_cn" caption="Success of Crank-Nicolson with r=0.8" %}
