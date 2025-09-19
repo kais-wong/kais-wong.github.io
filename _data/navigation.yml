@@ -3,6 +3,8 @@ main:
   #   url: /posts/
   - title: "Projects"
     url: /projects/
+  - title: "Robotics"
+    url: /rrobotics/
   - title: "Photos"
     url: /photos/
   - title: "Quotes"
