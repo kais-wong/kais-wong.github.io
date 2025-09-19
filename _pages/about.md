@@ -32,10 +32,12 @@ I have traveled to Japan, Malaysia, Hong Kong, Mainland China, and South Korea. 
 
 {% include gallery %}
 
-<!-- {% include figure popup=true image_path="/assets/images/shimizu.jpg" alt="shimizu" caption="清水の黒の海岸 | A black beach in Shimizu, Japan." %} -->
+{% include figure popup=true image_path="/assets/images/shimizu.jpg" alt="shimizu" caption="清水の黒の海岸 | A black beach in Shimizu, Japan." %}
 
+<!-- 
 <figure style="margin-top: -2em; margin-bottom: 0.2em;">
   <img src="/assets/images/shimizu.jpg" alt="Shimizu Black Beach" width="300" />
   <figcaption style="margin-top: -1em;font-size:0.8em; color:#666;">清水の黒の海岸 | A black beach in Shimizu, Japan. </figcaption>
 </figure>
+-->
 
