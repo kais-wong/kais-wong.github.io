@@ -59,8 +59,9 @@ plugins:
 author:
   name   : "Kai S. Wong"
   avatar : "/assets/images/kyoto_coin.jpg"
+  # "I'm an undergraduate student at Princeton University interested in mathematical modeling, and Japanese language and culture."
   bio    : |
-    "I'm an undergraduate student at Princeton University interested in mathematical modeling, and Japanese language and culture."
+    "ORFE @ Princeton. I'm interested in mathematical modeling & Japanese language and culture."
   links:
     # - label: "Website"
     #   icon: "fas fa-fw fa-link"

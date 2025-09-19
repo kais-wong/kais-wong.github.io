@@ -18,13 +18,13 @@ gallery:
     
 ---
 
-I was born and raised in Southern California. I attend Princeton University where I study Economics. Currently I am studying abroad at the SILS at Waseda University in Tokyo, Japan.
+I was born and raised in Southern California. I attend Princeton University where I study ORFE (Operations Research and Financial Engineering). Last year, I studied abroad in Tokyo, Japan at Waseda University's SILS.
 
-My academic interest is mathematical modeling. My current projects include modeling physical phenomena using diffusion equations and using stochastic processes to simulate asset movements.
+My academic interest is computer/mathematical modeling. My current projects include modeling physical phenomena using diffusion equations and using stochastic processes to simulate asset movements.
 
 I'm also interested in Japanese language and culture. I have been studying Japanese language for 2.5 years.
 
-My hobbies are reading, cafe hopping, trying new foods, and learning about new cultures. I practice Kyudo, a form of archery and traditional Japanese martial art.
+My hobbies are jigsaw puzzles, reading, cafe hopping, trying new foods, and learning about new cultures. I practice Kyudo, a form of archery and traditional Japanese martial art.
 
 I have traveled to Japan, Malaysia, Hong Kong, Mainland China, and South Korea. I love traveling and hope to travel more in the future.
 
