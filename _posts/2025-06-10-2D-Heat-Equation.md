@@ -2,7 +2,7 @@
 title: "2D Heat Equation"
 date: 2025-06-10T15:34:30-04:00
 categories:
-  - Projects
+  - projects
 header:
   image: 
   teaser: /assets/images/2D_heat_diffusion2.gif
@@ -17,7 +17,7 @@ toc_sticky: true
 ---
 
 # Background
-<span style="color: white;">Modeling the heat dispersion from the center of a metal plate in 2D.</span>
+Modeling the heat dispersion from the center of a metal plate in 2D.
 
 <script>
 window.MathJax = {
