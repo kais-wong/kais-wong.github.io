@@ -3,6 +3,9 @@ title: "1D Heat Equation"
 date: 2025-06-10T15:34:30-04:00
 categories:
   - projects
+header:
+  image: 
+  teaser: /assets/images/heat_1D_cn.png
 tags:
   - Diffusion Equation
   - Python
@@ -11,9 +14,6 @@ toc_label: "Table of Contents"
 toc_icon: "cog"
 toc_sticky: True
 ---
-# Background
-Modeling the movement of heat from one half of a metal bar to another in 1D.
-
 <script>
 window.MathJax = {
   tex: {
@@ -24,7 +24,8 @@ window.MathJax = {
 <script type="text/javascript" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
-
+# Background
+Modeling the movement of heat from one half of a metal bar to another in 1D.
 ## The Scenario
 Suppose we have a 1D bar of metal. The left end of the bar is held at 0°C and the right end of the bar is held at 10°C. The sides of the bar are insulated such that heat is not lost or transferred out of the system. How can we build a computational model of this system?
 ## Heat Equation
@@ -149,7 +150,9 @@ def forward_Euler(T, dt, time, k, dx, T_0, T_N, save_interval):
     return T_history
 ```
 
-Forward Euler is an explicit scheme meaning that in order to solve for the next point in time, only the infomration at the current point is used. While this is efficient, explicit schemes are susceptible to blowing up for a large $\Delta t$. Specifically, ____
+Forward Euler is an explicit scheme meaning that in order to solve for the next point in time, only the infomration at the current point is used. While this is efficient, explicit schemes are susceptible to blowing up for a large $\Delta t$. Below is an example of Forward Euler blowing up with $r=0.8$, which can be compared with how the implicit methods, which maintain stability given the same parameters.
+
+{% include figure popup=true image_path="/assets/images/heat_1D_fe_blowup.png" alt="1d_fe" caption="Failure of Forward Euler scheme for 1D heat diffusion with r=0.8" %}
 
 ## Method 2: Backward Euler (Implicit)
 
@@ -213,9 +216,9 @@ def Crank_Nicolson(T, dt, time, k, dx, T_0, T_N, save_interval):
 
     return T_history
 ```
- 
+
 Using the code above, we can model the temeprature of every interior point on our grid over time.
 
-There are various ways to represent this system, but I represented this model using a simple animation.
+There are various ways to represent this system, but I represented this model by graphing multiple heat distributions over time interval $[0, 200]$.
 
-<!-- {% include figure popup=true image_path="/assets/images/2D_heat_diffusion2.gif" alt="2d_heat" caption="Simple model of the diffusion of heat on a 2D surface" %} -->
+{% include figure popup=true image_path="/assets/images/heat_1D_cn.png" alt="1d_cn" caption="Simple model of the diffusion of heat on a 2D surface" %}
