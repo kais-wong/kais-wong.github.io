@@ -6,7 +6,7 @@ author_profile: true
 ---
 These are some videos and pictures of my robotics projects when I was in 7th and 8th grade. In 7th grade, my team and I worked our way to 2nd place at the World Championship. In 8th grade, I led a team of new members to the World Championship.
 
-{% include video id="-yNu9fgQdCg" provider="youtube" %}
+{% include video id="qyNu9fgQdCg" provider="youtube" %}
 
 {% include video id="ePG6h6ij9DI" provider="youtube" %}
 
