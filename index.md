@@ -22,7 +22,7 @@ feature_row:
     alt: "Project 1"
     title: "Geometric Brownian Motion"
     excerpt: "Simple model of asset price movement"
-    url: "/projects/Geometric-Brownian-Motion/"
+    url: "/projects/GBM/"
   - image_path: /assets/images/2D_heat_diffusion2.gif
     alt: "Project 2"
     title: "2D Heat Diffusion"

@@ -6,21 +6,21 @@ author_profile: true
 ---
 These are some videos and pictures of my robotics projects when I was in 7th and 8th grade. In 7th grade, my team and I worked our way to 2nd place at the World Championship. In 8th grade, I led a team of new members to the World Championship.
 
+{% include figure popup=true image_path="/assets/images/robotics/2017Worlds.JPG" caption="2017 World Championships (2nd place)" %}
+
+{% include figure popup=true image_path="assets/images/robotics/us_open_mom.jpeg" caption="2017 US Open Invitational" %}
+
+2018 World Championship Robot
 {% include video id="qyNu9fgQdCg" provider="youtube" %}
 
+2017 World Championship Robot
 {% include video id="ePG6h6ij9DI" provider="youtube" %}
 
-{% include video id="PaUEYzl5CZs" provider="youtube" %}
-
+2017 World Championship Qualifying Matches
 {% include video id="a4r19gL3Jh4" provider="youtube" %}
 
-https://youtu.be/qyNu9fgQdCg?si=sCejKFS74AUvV3JS
-
-https://youtu.be/ePG6h6ij9DI?si=3R0x_LYFi1uAJxwm
-
-https://youtu.be/PaUEYzl5CZs?si=AmxvaHb3AzpvrZ7_
-
-https://youtu.be/a4r19gL3Jh4?si=OqXiFpjzY3_MOo4u
+2017 US OPEN Demonstration
+{% include video id="PaUEYzl5CZs" provider="youtube" %}
 
 
 
