@@ -24,6 +24,7 @@ window.MathJax = {
 </script>
 
 # Background
+<span style="color: white;">Modeling the movement of heat from one half of a metal bar to another in 1D.</span>
 ## The Scenario
 Suppose we have a 1D bar of metal. The left end of the bar is held at 0°C and the right end of the bar is held at 10°C. The sides of the bar are insulated such that heat is not lost or transferred out of the system. How can we build a computational model of this system?
 ## Heat Equation

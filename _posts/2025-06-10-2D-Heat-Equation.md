@@ -28,6 +28,7 @@ window.MathJax = {
 </script>
 
 # Background
+<span style="color: white;">Modeling the heat dispersion from the center of a metal plate in 2D.</span>
 ## The Scenario
 Suppose we have a 2D rectangular sheet of metal. The center of the sheet is initalized at a positive temperature. All sides of this surface are held at a constant temperature, and the top and bottom of the sheet are insulated such that heat is not lost or transferred out of the system. How can we build a computational model of this system?
 ## Heat Equation
