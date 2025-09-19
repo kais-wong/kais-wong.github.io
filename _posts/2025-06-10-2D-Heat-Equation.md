@@ -16,6 +16,7 @@ toc_icon: "cog"
 toc_sticky: true
 ---
 Modeling the heat dispersion from the center of a metal plate in 2D.
+
 <script>
 window.MathJax = {
   tex: {
@@ -26,6 +27,7 @@ window.MathJax = {
 <script type="text/javascript" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
+
 # Background
 
 ## The Scenario
