@@ -15,6 +15,7 @@ toc_label: "Table of Contents"
 toc_icon: "cog"
 toc_sticky: true
 ---
+Modeling the heat dispersion from the center of a metal plate in 2D.
 <script>
 window.MathJax = {
   tex: {
@@ -26,7 +27,6 @@ window.MathJax = {
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
 </script>
 # Background
-Modeling the heat dispersion from the center of a metal plate in 2D.
 
 ## The Scenario
 Suppose we have a 2D rectangular sheet of metal. The center of the sheet is initalized at a positive temperature. All sides of this surface are held at a constant temperature, and the top and bottom of the sheet are insulated such that heat is not lost or transferred out of the system. How can we build a computational model of this system?
