@@ -32,7 +32,7 @@ I have traveled to Japan, Malaysia, Hong Kong, Mainland China, and South Korea. 
 
 {% include gallery %}
 
-{% include figure popup=true image_path="/assets/images/shimizu.jpg" alt="shimizu" caption="清水の黒の海岸 | A black beach in Shimizu, Japan." %}
+{% include figure popup=true image_path="/assets/images/shimizu-1.jpg" alt="shimizu" caption="清水の黒の海岸 | A black beach in Shimizu, Japan." %}
 
 <!-- 
 <figure style="margin-top: -2em; margin-bottom: 0.2em;">

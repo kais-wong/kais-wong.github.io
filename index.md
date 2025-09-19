@@ -46,7 +46,7 @@ feature_row:
 
 Hello! I'm Kai, and this is my personal website. Here you'll find my projects, blog posts, and more about me.
 
-- Research interests: Mathematical Modeling, Simulation, Scientific Computing, and More
-- Contact: kaiwong_at_princeton.edu
+- :mag_right: Research interests: Mathematical Modeling, Simulation, Scientific Computing, and More
+- :email: Contact: kaiwong_at_princeton.edu
 
 Feel free to explore!
