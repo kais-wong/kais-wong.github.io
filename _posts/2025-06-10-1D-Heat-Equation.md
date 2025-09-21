@@ -48,7 +48,7 @@ Where $\kappa$ is the diffusivity constant.
 
 ## Discretizing in space
 
-To solve this partial differential equation, we will discritize it in space using the central finite differences approach. By doing so we can rewrite our PDE as a system of coupled ODEs.
+To solve this partial differential equation, we will discretize it in space using the central finite differences approach. By doing so we can rewrite our PDE as a system of coupled ODEs.
 
 $$
 \frac{dT_{i}}{dt}=\kappa(\frac{T_{i-1}(t) - 2T_{i}(t) + T_{i+1}(t)}{(\Delta x)^2}) + \mathcal{O}(\Delta x^2)
@@ -67,7 +67,7 @@ $$
 
 ## Matrix form
 
-We can use matrix notation to represent this more cleanly.　By inspection, it is apparent that we can combine this system into a matrix containing the coeffiencts of $T_i(t)$ multiplied by a vector containing $T(t)$.
+We can use matrix notation to represent this more cleanly.　By inspection, it is apparent that we can combine this system into a matrix containing the coefficients of $T_i(t)$ multiplied by a vector containing $T(t)$.
 
 $$
 A =
@@ -88,7 +88,7 @@ T_{N-1}(t)
 \end{bmatrix}
 $$
 
-The matrix A is actually the discrete representation of the $\frac{d^2}{dx^2}$. Addionally, due to the nature of this problem, we must add the Dirichlet boundary conditions using a term we will call $\vec{b}$.
+The matrix A is actually the discrete representation of the $\frac{d^2}{dx^2}$. Additionally, due to the nature of this problem, we must add the Dirichlet boundary conditions using a term we will call $\vec{b}$.
 
 $$
 \vec{b} = [T_0,\ 0,\ 0,\ \ldots,\ 0,\ T_N]^T
@@ -153,7 +153,7 @@ def forward_Euler(T, dt, time, k, dx, T_0, T_N, save_interval):
     return T_history
 ```
 
-Forward Euler is an explicit scheme meaning that in order to solve for the next point in time, only the infomration at the current point is used. While this is efficient, explicit schemes are susceptible to blowing up for a large $\Delta t$. Below is an example of Forward Euler blowing up with $r=0.8$, which can be compared with how the implicit methods, which maintain stability given the same parameters.
+Forward Euler is an explicit scheme meaning that in order to solve for the next point in time, only the information at the current point is used. While this is efficient, explicit schemes are susceptible to blowing up for a large $\Delta t$. Below is an example of Forward Euler blowing up with $r=0.8$, which can be compared with how the implicit methods, which maintain stability given the same parameters.
 
 {% include figure popup=true image_path="/assets/images/heat/heat_1D_fe_blowup.png" alt="1d_fe" caption="Failure of Forward Euler scheme for 1D heat diffusion with r=0.8" %}
 
@@ -220,7 +220,7 @@ def Crank_Nicolson(T, dt, time, k, dx, T_0, T_N, save_interval):
     return T_history
 ```
 
-Using the code above, we can model the temeprature of every interior point on our grid over time.
+Using the code above, we can model the temperature of every interior point on our grid over time.
 
 There are various ways to represent this system, but I represented this model by graphing multiple heat distributions over time interval $[0, 200]$.
 

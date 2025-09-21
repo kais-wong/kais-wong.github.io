@@ -31,7 +31,7 @@ window.MathJax = {
 # Background
 
 ## The Scenario
-Suppose we have a 2D rectangular sheet of metal. The center of the sheet is initalized at a positive temperature. All sides of this surface are held at a constant temperature, and the top and bottom of the sheet are insulated such that heat is not lost or transferred out of the system. How can we build a computational model of this system?
+Suppose we have a 2D rectangular sheet of metal. The center of the sheet is initialized at a positive temperature. All sides of this surface are held at a constant temperature, and the top and bottom of the sheet are insulated such that heat is not lost or transferred out of the system. How can we build a computational model of this system?
 ## Heat Equation
 The heat equation is a derivative of the diffusion equation that describes the distribution of heat in a given space over time. It is a partial differential equation.
 
@@ -49,7 +49,7 @@ Where $\kappa$ is the diffusivity constant.
 
 ## Discretizing in space
 
-To solve this partial differential equation, we will discritize it in space using the central finite differences approach. By doing so we can rewrite our PDE as a system of coupled ODEs.
+To solve this partial differential equation, we will discretize it in space using the central finite differences approach. By doing so we can rewrite our PDE as a system of coupled ODEs.
 
 <!-- $$\frac{dT_{i,j}}{dt}=\kappa(\frac{T_{i-1,j}(t) - 2T_{i,j}(t) + T_{i+1,j}(t)}{(\Delta x)^2} + \frac{T_{i,j-1}(t) - 2T_{i,j}(t) + T_{i,j+1}(t)}{(\Delta y)^2})$$ -->
 
@@ -81,11 +81,11 @@ $$
 
 $$T^{n+1}_{i,j}=T^{n}_{i,j} + \frac{\Delta t \kappa}{(\Delta x)^2} (T_{i-1,j}(t) + T_{i+1,j}(t) + T_next = {i,j-1}(t) + T_{i,j+1}(t) - 4T_{i,j}(t))$$ -->
 
-We have now discitized the PDE in space and time. In essence, this represents the temperature of the discritized grid at a particular point in time. Now must now represent this in code.
+We have now discretized the PDE in space and time. In essence, this represents the temperature of the discretized grid at a particular point in time. Now must now represent this in code.
 
 ## Code
 
-Python allows us to express this operation simply using splicing. Let the term $\Delta t \kappa$ be alpha. Also, in order to simulate the temperature over time, we will iterate this operation from $t_{inital}$ to $t_{final}$
+Python allows us to express this operation simply using splicing. Let the term $\Delta t \kappa$ be alpha. Also, in order to simulate the temperature over time, we will iterate this operation from $t_{initial}$ to $t_{final}$
 
 ```python
 def forward_Euler2D(T, dt, time, k, dx, dy, T_0, T_N, save_interval):
@@ -104,7 +104,7 @@ def forward_Euler2D(T, dt, time, k, dx, dy, T_0, T_N, save_interval):
     return T_history
 ```
  
-Using the code above, we can model the temeprature of every interior point on our grid over time.
+Using the code above, we can model the temperature of every interior point on our grid over time.
 
 # Graphics
 
