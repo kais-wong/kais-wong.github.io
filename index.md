@@ -32,7 +32,7 @@ feature_row:
     alt: "Project 3"
     title: "SIR Model"
     excerpt: "Simple compartmental model for epidemiological motion"
-    url: "/project-3/"
+    url: "/projects/SIR/"
 ---
 
 > "I can calculate the motion of heavenly bodies, but not the madness of men."  
