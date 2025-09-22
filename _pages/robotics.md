@@ -6,6 +6,7 @@ author_profile: true
 toc: true
 toc_label: "Table of Contents"
 toc_icon: "cog"
+toc_sticky: true
 ---
 These are some videos and pictures of my robotics projects when I was in 7th and 8th grade. In 7th grade, my team and I worked our way to 2nd place at the World Championship. In 8th grade, I led a team of new members to the World Championship.
 

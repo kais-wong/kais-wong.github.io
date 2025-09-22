@@ -26,12 +26,12 @@ feature_row:
   - image_path: /assets/images/heat/2D_heat_diffusion2.gif
     alt: "Project 2"
     title: "2D Heat Diffusion"
-    excerpt: "Model of heat w.r.t. time in 2D"
+    excerpt: "Model of heat diffusion w.r.t. time in 2D"
     url: "/projects/2D-Heat-Equation/"
   - image_path: /assets/images/sir/seir_epidemic_progression_forward_euler.gif
     alt: "Project 3"
     title: "SIR Model"
-    excerpt: "Simple compartmental model for epidemiological motion"
+    excerpt: "Simple compartmental model for epidemiological motion of SARS-CoV-2"
     url: "/projects/SIR/"
 ---
 

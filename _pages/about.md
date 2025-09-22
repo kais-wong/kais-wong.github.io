@@ -18,7 +18,7 @@ gallery:
     
 ---
 
-I was born and raised in Southern California. I attend Princeton University where I study ORFE (Operations Research and Financial Engineering). Last year, I studied abroad in Tokyo, Japan at Waseda University's SILS.
+I was born and raised in Southern California. I currently attend Princeton University where I study ORFE (Operations Research and Financial Engineering). Last year, I studied abroad at Waseda University's School of International Liberal Studies in Tokyo, Japan.
 
 My academic interest is computer/mathematical modeling. My current projects include modeling physical phenomena using diffusion equations and using stochastic processes to simulate asset movements.
 
