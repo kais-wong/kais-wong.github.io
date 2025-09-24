@@ -21,7 +21,7 @@ feature_row:
   - image_path: /assets/images/gbm/closed_form.png
     alt: "Project 1"
     title: "Geometric Brownian Motion"
-    excerpt: "Simple model of asset price movement"
+    excerpt: "Simple model of asset price movement using the GBM stochastic process"
     url: "/projects/GBM/"
   - image_path: /assets/images/heat/2D_heat_diffusion2.gif
     alt: "Project 2"
